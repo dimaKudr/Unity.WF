@@ -28,8 +28,8 @@ namespace Unity.WF
 
         public override void PostBuildUp(IBuilderContext context)
         {
-            var baseTypeName = context.BuildKey.Type.BaseType.FullName;
-            if (baseTypeName.StartsWith("System.Activities") == false)
+            var derivedFromActivity = typeof(Activity).IsAssignableFrom(context.BuildKey.Type);
+            if (!derivedFromActivity)
                 return;
 
             var rootActivity = (Activity)context.Existing;
@@ -46,8 +46,8 @@ namespace Unity.WF
                 var type = activity.GetType();
 
                 var systemActivities =
-                    type.FullName.StartsWith("System.") || type.FullName.StartsWith("Microsoft.");
-                
+                    type.Namespace.StartsWith("System.") || type.Namespace.StartsWith("Microsoft.");
+
                 if (!systemActivities)
                     _container.BuildUp(type, activity);
 
