@@ -25,7 +25,7 @@ namespace Unity.WF.Tests
         /// should be resolved without any additional extensions.
         ///</summary>
         [Test]
-        public void SimpleCodeActivityTest()
+        public void SimpleCodeActivityInjectedByUnityContainer()
         {
             var activity = _container.Resolve<FirstCalculatorActivity>();
 
@@ -44,7 +44,7 @@ namespace Unity.WF.Tests
         /// could be injected using Workflow extension.
         ///</summary>
         [Test]
-        public void CompositeActivityTest()
+        public void CompositeActivityInjectedByWorkflowExtension()
         {
             var activity = _container.Resolve<CompositeActivity>();
 
@@ -52,6 +52,24 @@ namespace Unity.WF.Tests
 
             var wfInvoker = new WorkflowInvoker(activity);
             wfInvoker.Extensions.Add(diExtension);
+
+            var results = wfInvoker.Invoke();
+
+            Assert.AreEqual(45, (int)results["CompositeResult"]);
+        }
+
+        ///<summary>
+        /// For xaml-driven composite activities external dependencies
+        /// could be injected using Unity extension.
+        ///</summary>
+        [Test]
+        public void CompositeActivityInjectedByUnityExtension()
+        {
+            _container.AddNewExtension<WorkflowExtension>();
+
+            var activity = _container.Resolve<CompositeActivity2>();
+
+            var wfInvoker = new WorkflowInvoker(activity);
 
             var results = wfInvoker.Invoke();
 

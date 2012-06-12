@@ -1,22 +1,22 @@
-﻿<Activity mc:Ignorable="sads sap sap2010" x:Class="Unity.WF.SampleActivities.CompositeActivity"
+﻿<Activity mc:Ignorable="sap sads" x:Class="Unity.WF.SampleActivities.CompositeActivity2"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:local="clr-namespace:Unity.WF.SampleActivities"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System"
  xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
  xmlns:s="clr-namespace:System;assembly=mscorlib"
  xmlns:s1="clr-namespace:System;assembly=System"
- xmlns:s2="clr-namespace:System;assembly=System.Core"
- xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
- xmlns:s4="clr-namespace:System;assembly=System.Xml"
+ xmlns:s2="clr-namespace:System;assembly=System.Xml"
+ xmlns:s3="clr-namespace:System;assembly=System.Core"
+ xmlns:s4="clr-namespace:System;assembly=System.ServiceModel"
  xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
  xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
  xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
- xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
- xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
- xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System"
+ xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
  xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core"
- xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel"
+ xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib"
  xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
  xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
  xmlns:st="clr-namespace:System.Text;assembly=mscorlib"
@@ -24,19 +24,18 @@
   <x:Members>
     <x:Property Name="CompositeResult" Type="OutArgument(x:Int32)" />
   </x:Members>
-  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>305.6,328</sap:VirtualizedContainerService.HintSize>
   <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
-  <Sequence sad:XamlDebuggerXmlReader.FileName="C:\Projects\Unity.WF\Unity.WF.SampleActivities\CompositeActivity.xaml" sap:VirtualizedContainerService.HintSize="265.6,248">
+  <Sequence sad:XamlDebuggerXmlReader.FileName="C:\Projects\Unity.WF\Unity.WF.SampleActivities\CompositeActivity2.xaml" sap:VirtualizedContainerService.HintSize="265.6,248">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="CalculationResult" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
-      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-      </scg:Dictionary>
+      </scg3:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <local:SecondCalculatorActivity Calculator="{x:Null}" A="11" B="22" DisplayName="Calculator (injected by WF)" sap:VirtualizedContainerService.HintSize="243.2,22.4" Result="[CalculationResult]" />
+    <local:FirstCalculatorActivity Calculator="{x:Null}" A="11" B="22" DisplayName="Calculator injected by Unity" sap:VirtualizedContainerService.HintSize="243.2,22.4" Result="[CalculationResult]" />
     <Assign sap:VirtualizedContainerService.HintSize="243.2,60.8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[CompositeResult]</OutArgument>

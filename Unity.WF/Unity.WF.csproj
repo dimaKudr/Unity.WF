@@ -58,6 +58,9 @@
     <Compile Include="ActivityContextExtension.cs" />
     <Compile Include="DependencyInjectionExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkflowExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
