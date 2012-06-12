@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Unity.WF")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Unity extension to add IoC support to Workflow Foundation")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Dmytro Kudryavtsev")]
 [assembly: AssemblyProduct("Unity.WF")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]

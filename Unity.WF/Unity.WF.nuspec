@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <version>1.0.0</version>
+    <authors>Dmytro Kudryavtsev</authors>
+    <owners />
+    <projectUrl>https://github.com/dimaKudr/Unity.WF</projectUrl>
+    <dependencies>
+      <dependency id="Unity" version="" />
+    </dependencies>
+    <id>Unity.WF</id>
+    <title>Unity.WF</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unity extension to add IoC support to Workflow Foundation</description>
+    <summary></summary>
+    <language>en-US</language>
+    <tags>Unity wf workflow ioc di</tags>
+  </metadata>
+  <files />
+</package>
