@@ -17,7 +17,7 @@ namespace Unity.WF
         }
     }
 
-    public class WorkflowBuildStrategy : BuilderStrategy
+    internal sealed class WorkflowBuildStrategy : BuilderStrategy
     {
         private IUnityContainer _container;
 

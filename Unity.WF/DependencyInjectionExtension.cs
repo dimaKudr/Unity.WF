@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Unity;
+﻿using System;
+using Microsoft.Practices.Unity;
 
 namespace Unity.WF
 {
@@ -8,6 +9,9 @@ namespace Unity.WF
 
         public DependencyInjectionExtension(IUnityContainer container)
         {
+            if (container == null)
+                throw new ArgumentNullException("container");
+
             _container = container;
         }
 
