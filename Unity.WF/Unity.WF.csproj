@@ -46,6 +46,7 @@
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
     <Reference Include="System.ServiceModel.Activities" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +59,7 @@
     <Compile Include="ActivityContextExtension.cs" />
     <Compile Include="DependencyInjectionExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnityServiceHostFactory.cs" />
     <Compile Include="WorkflowExtension.cs">
       <SubType>Code</SubType>
     </Compile>
