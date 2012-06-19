@@ -10,6 +10,7 @@ First, install [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). 
 
 How do I use...
 --------------------------------
-1. [Workflow instance extension to inject dependencies into Wokflow Activity](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Workflow-instance-extension-to-inject-dependencies-into-Wokflow-Activity)
-2. [Unity container extension to inject dependencies into Wokflow Activity](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Unity-container-extension-to-inject-dependencies-into-Wokflow-Activity)
-3. [Workflow instance extension to inject dependencies into Wokflow Service](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Workflow-instance-extension-to-inject-dependencies-into-Wokflow-Service)
+1. [Workflow instance extension to inject dependencies into WF Activity](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Workflow-instance-extension-to-inject-dependencies-into-WF-Activity)
+2. [Unity container extension to inject dependencies into WF Activity](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Unity-container-extension-to-inject-dependencies-into-WF-Activity)
+3. [Workflow instance extension to inject dependencies into WF Service](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Workflow-instance-extension-to-inject-dependencies-into-WF-service)
+4. [Unity container extension to inject dependencies into WF Service](https://github.com/dimaKudr/Unity.WF/wiki/How-to-use-Unity-container-extension-to-inject-dependencies-into-WF-service)
