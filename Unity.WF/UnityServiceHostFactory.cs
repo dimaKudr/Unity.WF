@@ -9,15 +9,29 @@ namespace Unity.WF
     {
         protected abstract void ConfigureContainer(IUnityContainer container);
 
+        protected abstract InjectionTypes ConfigureInjectionType();
+
         protected override WorkflowServiceHost CreateWorkflowServiceHost(WorkflowService service, Uri[] baseAddresses)
         {
-            var host = base.CreateWorkflowServiceHost(service, baseAddresses);
-
             var container = new UnityContainer();
             ConfigureContainer(container);
 
-            var diExtension = new DependencyInjectionExtension(container);
-            host.WorkflowExtensions.Add(diExtension);
+            var host = base.CreateWorkflowServiceHost(service, baseAddresses);
+
+            var injectionType = ConfigureInjectionType();
+
+            if (injectionType == InjectionTypes.Push)
+            {
+                container.AddNewExtension<WorkflowExtension>();
+
+                var rootActivity = host.Activity;
+                container.BuildUp(rootActivity.GetType(), rootActivity);
+            }
+            else
+            {
+                var diExtension = new DependencyInjectionExtension(container);
+                host.WorkflowExtensions.Add(diExtension);
+            }
 
             return host;
         }

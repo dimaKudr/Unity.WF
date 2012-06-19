@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="ActivityContextExtension.cs" />
     <Compile Include="DependencyInjectionExtension.cs" />
+    <Compile Include="InjectionTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnityServiceHostFactory.cs" />
     <Compile Include="WorkflowExtension.cs">
