@@ -11,7 +11,11 @@ namespace Unity.WF
 
         protected abstract InjectionTypes ConfigureInjectionType();
 
-        protected override WorkflowServiceHost CreateWorkflowServiceHost(WorkflowService service, Uri[] baseAddresses)
+	    protected virtual void ConfigureServiceHost(WorkflowServiceHost serviceHost)
+	    {
+	    }
+
+	    protected override WorkflowServiceHost CreateWorkflowServiceHost(WorkflowService service, Uri[] baseAddresses)
         {
             var container = new UnityContainer();
             ConfigureContainer(container);
@@ -33,6 +37,7 @@ namespace Unity.WF
                 host.WorkflowExtensions.Add(diExtension);
             }
 
+		    ConfigureServiceHost(host);
             return host;
         }
     }
